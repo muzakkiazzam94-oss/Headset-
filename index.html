@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas HTML - Headset</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        rgba(0, 60, 30, 0.8),
+        rgba(0, 60, 30, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #eafff2;
+    overflow-x: hidden;
+}
+
+h1, h2 { text-align: center; }
+
+/* COVER */
+.cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 50, 25, 0.75);
+}
+
+.cover h1 { font-size: 42px; }
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #1e7f43;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav {
+    background-color: rgba(0, 40, 20, 0.9);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #b9ffe0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CONTENT */
+.container { padding: 20px; }
+
+.card {
+    background-color: rgba(0, 70, 35, 0.85);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgba(0, 40, 20, 0.9);
+    text-align: center;
+    padding: 15px;
+}
+
+/* DAUN JATUH */
+.leaf {
+    position: fixed;
+    top: -50px;
+    width: 40px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* BUTTON SOUND */
+.sound-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e7f43;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- 🔊 SOUND HUTAN -->
+<audio id="forestSound" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_2c9c60b67c.mp3" type="audio/mpeg">
+</audio>
+
+<button class="sound-btn" onclick="toggleSound()">🔊 Suara Hutan</button>
+
+<script>
+let playing = false;
+const sound = document.getElementById("forestSound");
+
+function toggleSound() {
+    if (!playing) {
+        sound.play();
+        playing = true;
+    } else {
+        sound.pause();
+        playing = false;
+    }
+}
+</script>
+
+<!-- DAUN -->
+<img src="https://cdn-icons-png.flaticon.com/512/290/290976.png" class="leaf" style="left:15%; animation-duration:12s;">
+<img src="https://cdn-icons-png.flaticon.com/512/290/290976.png" class="leaf" style="left:45%; animation-duration:15s;">
+<img src="https://cdn-icons-png.flaticon.com/512/290/290976.png" class="leaf" style="left:75%; animation-duration:10s;">
+
+<!-- COVER -->
+<section class="cover">
+    <h1>TUGAS HTML</h1>
+    <p>Website Statis Tentang Headset</p>
+    <p>Nama: Azzam Muzakki<br>Kelas: XI<br>Mata Pelajaran: Informatika</p>
+    <a href="#isi" class="btn">Masuk Website</a>
+</section>
+
+<nav id="isi">
+    <a href="#pengertian">Pengertian</a>
+    <a href="#gambar">Gambar</a>
+    <a href="#fungsi">Fungsi</a>
+    <a href="#kelebihan">Kelebihan</a>
+</nav>
+
+<div class="container">
+
+<div class="card" id="pengertian">
+<h2>Pengertian Headset</h2>
+<p>Headset adalah perangkat audio yang digunakan untuk mendengarkan suara dan berkomunikasi.</p>
+</div>
+
+<div class="card" id="gambar">
+<h2>Headset Hijau Tua</h2>
+<img src="headset-hijau.jpg" alt="Headset Hijau Tua">
+
+<div class="card" id="fungsi">
+<h2>Fungsi Headset</h2>
+<ul>
+<li>Mendengarkan musik</li>
+<li>Belajar online</li>
+<li>Meeting virtual</li>
+<li>Gaming</li>
+</ul>
+</div>
+
+<div class="card" id="kelebihan">
+<h2>Kelebihan Headset</h2>
+<p>Memberikan kualitas suara lebih jelas dan fokus.</p>
+</div>
+
+</div>
+
+<footer>
+<p>&copy; 2026 Tugas HTML Tema Hutan</p>
+</footer>
+
+</body>
+</html>
